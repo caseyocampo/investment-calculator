@@ -29,3 +29,7 @@ Alternatively, add this command to your `package.json` file:
 And then, run:
 
 `npm run tailwind`
+
+## Notes
+
+This repo utilizes [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
