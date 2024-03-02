@@ -26,7 +26,7 @@ export default function Calculator() {
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
       <div className="flex flex-col gap-4 sm:gap-8 sm:justify-between sm:flex-row">
-        <div id="form" className="bg-white p-6 sm:p-8 rounded-lg">
+        <div id="form" className="bg-white sm:w-[550px] p-6 sm:p-8 rounded-lg">
           <section aria-live="assertive" aria-label={errorMessage ? "Error messages" : ""}>
             {errorMessage ? (
               <div className="bg-red-100 rounded-lg p-4 mb-6">
@@ -67,27 +67,26 @@ export default function Calculator() {
                 <label htmlFor="compound" className="mr-4">
                   Compound
                 </label>
+                {/* @TODO: add support for commented out options */}
                 <select id="compound">
                   <option value="1">Annually</option>
-                  <option value="2">Semi-Annually</option>
-                  <option value="3">Quarterly</option>
+                  {/* <option value="2">Semi-Annually</option> */}
+                  {/* <option value="3">Quarterly</option> */}
                   <option value="4">Monthly</option>
-                  <option value="5">Semi-Monthly</option>
+                  {/* <option value="5">Semi-Monthly</option> */}
                   <option value="6">Bi-Weekly</option>
-                  <option value="7">Weekly</option>
-                  <option value="8">Daily</option>
-                  <option value="9">Continuously</option>
+                  {/* <option value="7">Weekly</option> */}
+                  {/* <option value="8">Daily</option> */}
+                  {/* <option value="9">Continuously</option> */}
                 </select>
               </div>
 
-              <div className="flex flex-col justify-between mb-2 md:flex-row">
+              <div className="flex flex-col justify-between mb-4 md:flex-row">
                 <label htmlFor="additional-contribution" className="mr-4">
                   Additional Contribution
                 </label>
                 <input type="text" id="additional-contribution" />
               </div>
-
-              <p className="mt-8 mb-4">Choose a time of contribution and a contribution interval below.</p>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <p className="mr-4 mb-4 md:mb-0">Time of Contribution</p>
