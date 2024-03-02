@@ -1,6 +1,8 @@
+import Results from "./Results"
+
 export default function Calculator() {
   return (
-    <section className="max-w-3xl m-auto">
+    <main className="max-w-3xl m-auto">
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
       <div className="flex flex-col gap-8 sm:justify-between sm:flex-row">
@@ -90,36 +92,15 @@ export default function Calculator() {
                 </fieldset>
               </div>
 
-              <button type="submit" className="bg-green-800 text-white mt-4 hover:bg-green-900">
+              <button type="submit" className="bg-green-800 text-white mt-4 w-full hover:bg-green-900">
                 Calculate
               </button>
             </fieldset>
           </form>
         </div>
 
-        <div id="results" className="max-w-lg">
-          <h2 className="text-2xl mb-4">Results</h2>
-          <div className="flex justify-between mb-2">
-            <p className="mr-4 font-bold">End Balance</p>
-            <p className="font-bold">$198,290.40</p>
-          </div>
-
-          <div className="flex justify-between mb-2">
-            <p className="mr-4">Starting Amount</p>
-            <p>$20,000.00</p>
-          </div>
-
-          <div className="flex justify-between mb-2">
-            <p className="mr-4">Total Contributions</p>
-            <p>$120,000.00</p>
-          </div>
-
-          <div className="flex justify-between mb-2">
-            <p className="mr-4">Total Interest</p>
-            <p>$58,290.40</p>
-          </div>
-        </div>
+        <Results />
       </div>
-    </section>
+    </main>
   )
 }
