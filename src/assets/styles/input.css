@@ -45,6 +45,7 @@
 
   ul {
     list-style: disc;
+    margin-left: 1rem;
   }
 
   button {

@@ -27,9 +27,21 @@ export default function Calculator() {
 
       <div className="flex flex-col gap-4 sm:gap-8 sm:justify-between sm:flex-row">
         <div id="form" className="bg-white p-6 sm:p-8 rounded-lg">
+          <section aria-live="assertive" aria-label={errorMessage ? "Error messages" : ""}>
+            {errorMessage ? (
+              <div className="bg-red-100 rounded-lg p-4 mb-6">
+                <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
+                <ul id="starting-amount-error" className="text-red-950">
+                  <li>The Starting Amount field cannot be blank</li>
+                  <li>Please enter a starting amount in US Dollars</li>
+                </ul>
+              </div>
+            ) : null}
+          </section>
           <form className="max-w-lg">
             <fieldset>
-              <legend className="text-2xl mb-4">Enter investment numbers</legend>
+              <legend className="text-2xl mb-2">Enter investment numbers</legend>
+              <p className="mb-8 text-violet-950 opacity-75">*All fields below are required</p>
               <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="initial-investment" className="mr-4">
                   Starting Amount ($)
@@ -114,18 +126,6 @@ export default function Calculator() {
               >
                 Calculate
               </button>
-
-              <section aria-live="assertive">
-                {errorMessage ? (
-                  <div className="bg-red-100 rounded-lg p-4 mt-4 ">
-                    <span className="sr-only">Error message</span>
-                    <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
-                    <ul id="starting-amount-error" className="text-red-950">
-                      <li className="ml-4">Please enter a starting amount in US Dollars</li>
-                    </ul>
-                  </div>
-                ) : null}
-              </section>
             </fieldset>
           </form>
         </div>
