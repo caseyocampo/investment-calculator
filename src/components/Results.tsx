@@ -3,7 +3,7 @@ export default function Results({ localStartingAmount }: { localStartingAmount: 
   const startingAmountFormatted = new Intl.NumberFormat().format(startingAmount)
 
   return (
-    <div id="results" className="h-fit p-4 w-auto bg-white rounded-lg sm:w-96 sm:p-8">
+    <div id="results" className="h-fit p-6 w-auto bg-white rounded-lg sm:w-96 sm:p-8">
       <h2 className="text-2xl mb-4">Results</h2>
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
         <p className="mr-4 font-bold">End Balance</p>

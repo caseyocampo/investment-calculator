@@ -26,7 +26,7 @@ export default function Calculator() {
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
       <div className="flex flex-col gap-4 sm:gap-8 sm:justify-between sm:flex-row">
-        <div id="form" className="bg-white p-4 sm:p-8 rounded-lg">
+        <div id="form" className="bg-white p-6 sm:p-8 rounded-lg">
           <form className="max-w-lg">
             <fieldset>
               <legend className="text-2xl mb-4">Enter investment numbers</legend>
