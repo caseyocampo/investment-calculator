@@ -4,7 +4,7 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div className="p-4 ">
+    <div className="p-4 bg-violet-50 bg-opacity-90">
       <Header />
       <Calculator />
       <Footer />

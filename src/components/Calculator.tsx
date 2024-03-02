@@ -6,7 +6,7 @@ export default function Calculator() {
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
       <div className="flex flex-col gap-8 sm:justify-between sm:flex-row">
-        <div id="form">
+        <div id="form" className="bg-white p-8 rounded-lg">
           <form className="max-w-lg">
             <fieldset>
               <legend className="text-2xl mb-4">Add investment numbers</legend>
@@ -19,14 +19,14 @@ export default function Calculator() {
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="years" className="mr-4">
-                  After (years)
+                  Projected Years
                 </label>
                 <input type="text" id="years" />
               </div>
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="return-rate" className="mr-4">
-                  Return Rate
+                  Return Rate Percentage
                 </label>
                 <input type="text" id="return-rate" />
               </div>
@@ -58,10 +58,10 @@ export default function Calculator() {
               <p className="mt-8 mb-4">Choose a time of contribution and a contribution interval.</p>
 
               <div className="flex justify-between mb-2">
-                <label htmlFor="additional-contribution" className="mr-4">
+                <label htmlFor="contribute-start" className="mr-4">
                   Time of Contribution
                 </label>
-                <fieldset className="flex gap-2">
+                <fieldset className="flex gap-2" id="time-of-contribution">
                   <legend className="sr-only">Select a contribution interval</legend>
 
                   <div>
@@ -77,7 +77,7 @@ export default function Calculator() {
               </div>
 
               <div className="flex justify-between mb-2">
-                <label htmlFor="additional-contribution" className="mr-4">
+                <label htmlFor="contribution-interval" className="mr-4">
                   Contribution Interval
                 </label>
                 <fieldset className="flex gap-2">
@@ -96,7 +96,7 @@ export default function Calculator() {
 
               <button
                 type="submit"
-                className="bg-green-800 text-white mt-4 w-full hover:bg-green-900"
+                className="bg-blue-800 text-white mt-4 w-full outline-offset-4 hover:bg-blue-900"
                 onClick={e => {
                   e.preventDefault()
                   console.log("clicked")
