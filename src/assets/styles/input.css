@@ -19,11 +19,11 @@
 
   a {
     font-weight: 500;
-    color: var(--link-color-primary);
     text-decoration: underline;
+    @apply text-blue-850;
   }
   a:hover {
-    color: var(--link-color-primary-hover);
+    @apply text-blue-950;
   }
 
   html,
@@ -37,8 +37,12 @@
     line-height: 1.1;
   }
 
-  p {
+  p,
+  legend,
+  label,
+  select {
     font-size: 1rem;
+    @apply text-violet-950;
   }
 
   button {

@@ -1,6 +1,6 @@
 export default function Results() {
   return (
-    <div id="results" className="max-w-lg">
+    <div id="results" className="max-w-lg p-8 sm:py-8 sm:px-0">
       <h2 className="text-2xl mb-4">Results</h2>
       <div className="flex justify-between mb-2 gap-8">
         <p className="mr-4 font-bold">End Balance</p>

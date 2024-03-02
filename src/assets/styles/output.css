@@ -460,12 +460,14 @@ video {
 
 a {
   font-weight: 500;
-  color: var(--link-color-primary);
   text-decoration: underline;
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
 }
 
 a:hover {
-  color: var(--link-color-primary-hover);
+  --tw-text-opacity: 1;
+  color: rgb(23 37 84 / var(--tw-text-opacity));
 }
 
 html,
@@ -479,8 +481,13 @@ h1 {
   line-height: 1.1;
 }
 
-p {
+p,
+  legend,
+  label,
+  select {
   font-size: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(46 16 101 / var(--tw-text-opacity));
 }
 
 button {
@@ -732,13 +739,14 @@ input,
   font-weight: 700;
 }
 
+.text-violet-950 {
+  --tw-text-opacity: 1;
+  color: rgb(46 16 101 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.outline-offset-2 {
-  outline-offset: 2px;
 }
 
 .outline-offset-4 {
@@ -757,5 +765,15 @@ input,
 
   .sm\:justify-between {
     justify-content: space-between;
+  }
+
+  .sm\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .sm\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
