@@ -43,6 +43,10 @@
     @apply text-violet-950;
   }
 
+  ul {
+    list-style: disc;
+  }
+
   button {
     border-radius: 8px;
     border: 1px solid transparent;

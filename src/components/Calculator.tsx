@@ -115,13 +115,14 @@ export default function Calculator() {
                 Calculate
               </button>
 
-              <section aria-live="polite">
+              <section aria-live="assertive">
                 {errorMessage ? (
                   <div className="bg-red-100 rounded-lg p-4 mt-4 ">
+                    <span className="sr-only">Error message</span>
                     <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
-                    <p id="starting-amount-error" className="text-red-950">
-                      Please enter a starting amount
-                    </p>
+                    <ul id="starting-amount-error" className="text-red-950">
+                      <li className="ml-4">Please enter a starting amount in US Dollars</li>
+                    </ul>
                   </div>
                 ) : null}
               </section>

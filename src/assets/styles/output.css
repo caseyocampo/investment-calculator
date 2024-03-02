@@ -488,6 +488,10 @@ h1,
   color: rgb(46 16 101 / var(--tw-text-opacity));
 }
 
+ul {
+  list-style: disc;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -641,6 +645,10 @@ input,
   margin-bottom: 2rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -742,12 +750,12 @@ input,
   padding: 1rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .text-2xl {
