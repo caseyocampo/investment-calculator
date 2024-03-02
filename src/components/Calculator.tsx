@@ -1,18 +1,33 @@
+import { useState } from "react"
+
 import Results from "./Results"
 
 export default function Calculator() {
+  const [startingAmount, setStartingAmount] = useState(0)
+  const [errorMessage, setErrorMessage] = useState(false)
+
+  function calculate() {
+    const entered = (document.getElementById("initial-investment") as HTMLInputElement).value
+    setStartingAmount(Number(entered))
+    if (!entered) {
+      setErrorMessage(true)
+    } else {
+      setErrorMessage(false)
+    }
+  }
+
   return (
-    <main className="max-w-3xl m-auto">
+    <main className="max-w-4xl m-auto">
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
-      <div className="flex flex-col gap-8 sm:justify-between sm:flex-row">
+      <div className="flex flex-col gap-8 sm:gap-16 sm:justify-between sm:flex-row">
         <div id="form" className="bg-white p-8 rounded-lg">
           <form className="max-w-lg">
             <fieldset>
-              <legend className="text-2xl mb-4">Add investment numbers</legend>
+              <legend className="text-2xl mb-4">Enter investment numbers</legend>
               <div className="flex justify-between mb-2">
                 <label htmlFor="initial-investment" className="mr-4">
-                  Starting Amount
+                  Starting Amount ($)
                 </label>
                 <input type="text" id="initial-investment" />
               </div>
@@ -26,7 +41,7 @@ export default function Calculator() {
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="return-rate" className="mr-4">
-                  Return Rate Percentage
+                  Return Rate (%)
                 </label>
                 <input type="text" id="return-rate" />
               </div>
@@ -55,7 +70,7 @@ export default function Calculator() {
                 <input type="text" id="additional-contribution" />
               </div>
 
-              <p className="mt-8 mb-4">Choose a time of contribution and a contribution interval.</p>
+              <p className="mt-8 mb-4">Choose a time of contribution and a contribution interval below.</p>
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="contribute-start" className="mr-4">
@@ -99,16 +114,24 @@ export default function Calculator() {
                 className="bg-blue-800 text-white mt-4 w-full outline-offset-4 hover:bg-blue-900"
                 onClick={e => {
                   e.preventDefault()
-                  console.log("clicked")
+                  calculate()
                 }}
               >
                 Calculate
               </button>
+
+              {errorMessage ? (
+                <section className="bg-red-100 rounded-lg p-4 mt-4 ">
+                  <p id="starting-amount-error" className="text-red-950">
+                    Please enter a starting amount.
+                  </p>
+                </section>
+              ) : null}
             </fieldset>
           </form>
         </div>
 
-        <Results />
+        <Results startingAmount={startingAmount} />
       </div>
     </main>
   )

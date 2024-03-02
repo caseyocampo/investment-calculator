@@ -65,6 +65,7 @@
   select {
     border: 1px solid transparent;
     border-radius: 4px;
+    @apply p-1;
     @apply bg-violet-100;
   }
 }

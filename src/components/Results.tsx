@@ -1,6 +1,6 @@
-export default function Results() {
+export default function Results({ startingAmount }: { startingAmount: number }) {
   return (
-    <div id="results" className="max-w-lg p-8 sm:py-8 sm:px-0">
+    <div id="results" className="max-w-lg w-96 p-8 sm:py-8 sm:px-0">
       <h2 className="text-2xl mb-4">Results</h2>
       <div className="flex justify-between mb-2 gap-8">
         <p className="mr-4 font-bold">End Balance</p>
@@ -9,7 +9,7 @@ export default function Results() {
 
       <div className="flex justify-between mb-2 gap-8">
         <p className="mr-4">Starting Amount</p>
-        <p>$20,000.00</p>
+        <p>${startingAmount ? startingAmount : 0}</p>
       </div>
 
       <div className="flex justify-between mb-2 gap-8">
