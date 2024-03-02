@@ -4,7 +4,7 @@ An investment calculator used to calculate and view projected investments.
 
 ## Technology
 
-Uses React, TypeScript, Tailwind, and Vite.
+Uses React, TypeScript, Tailwind, Vite, and Vercel.
 
 ## Get Started
 
