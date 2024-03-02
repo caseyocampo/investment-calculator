@@ -698,6 +698,10 @@ input,
   width: 20rem;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -728,6 +732,10 @@ input,
 
 .gap-16 {
   gap: 4rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .rounded-lg {
@@ -800,6 +808,10 @@ input,
 }
 
 @media (min-width: 640px) {
+  .sm\:w-96 {
+    width: 24rem;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -814,6 +826,10 @@ input,
 
   .sm\:gap-8 {
     gap: 2rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-0 {

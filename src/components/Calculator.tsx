@@ -3,12 +3,19 @@ import { useState } from "react"
 import Results from "./Results"
 
 export default function Calculator() {
+  let getLocalStartingAmount = localStorage.getItem("localStartingAmount")
+
   const [startingAmount, setStartingAmount] = useState(0)
+  const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
   const [errorMessage, setErrorMessage] = useState(false)
 
+  // @TODO: refactor naming of variables
   function calculate() {
     const entered = (document.getElementById("initial-investment") as HTMLInputElement).value
-    setStartingAmount(Number(entered))
+    localStorage.setItem("localStartingAmount", entered)
+    const localStartingAmount = localStorage.getItem("localStartingAmount")
+    setStartingAmount(Number(localStartingAmount))
+    setLocalStartingAmount(localStartingAmount)
     if (!entered) {
       setErrorMessage(true)
     } else {
@@ -20,8 +27,8 @@ export default function Calculator() {
     <main className="max-w-4xl m-auto">
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
-      <div className="flex flex-col gap-8 sm:gap-16 sm:justify-between sm:flex-row">
-        <div id="form" className="bg-white p-8 rounded-lg">
+      <div className="flex flex-col gap-4 sm:gap-16 sm:justify-between sm:flex-row">
+        <div id="form" className="bg-white p-4 sm:p-8 rounded-lg">
           <form className="max-w-lg">
             <fieldset>
               <legend className="text-2xl mb-4">Enter investment numbers</legend>
@@ -131,7 +138,7 @@ export default function Calculator() {
           </form>
         </div>
 
-        <Results startingAmount={startingAmount} />
+        <Results startingAmount={startingAmount} localStartingAmount={localStartingAmount ? Number(localStartingAmount) : 0} />
       </div>
     </main>
   )
