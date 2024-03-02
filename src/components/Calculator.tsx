@@ -60,14 +60,14 @@ export default function Calculator() {
                 <label htmlFor="years" className="mr-4">
                   Projected Years
                 </label>
-                <input type="text" id="years" />
+                <input type="text" id="years" inputMode="numeric" pattern="[0-9]*" />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="return-rate" className="mr-4">
                   Return Rate (%)
                 </label>
-                <input type="text" id="return-rate" />
+                <input type="text" id="return-rate" inputMode="numeric" pattern="[0-9]*" />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
@@ -92,7 +92,7 @@ export default function Calculator() {
                 <label htmlFor="additional-contribution" className="mr-4">
                   Additional Contribution
                 </label>
-                <input type="text" id="additional-contribution" />
+                <input type="text" id="additional-contribution" inputMode="numeric" pattern="[0-9]*" />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
