@@ -5,7 +5,7 @@ import Results from "./Results"
 export default function Calculator() {
   let getLocalStartingAmount = localStorage.getItem("localStartingAmount")
 
-  const [startingAmount, setStartingAmount] = useState(0)
+  //   const [startingAmount, setStartingAmount] = useState(0)
   const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
   const [errorMessage, setErrorMessage] = useState(false)
 
@@ -14,7 +14,7 @@ export default function Calculator() {
     const entered = (document.getElementById("initial-investment") as HTMLInputElement).value
     localStorage.setItem("localStartingAmount", entered)
     const localStartingAmount = localStorage.getItem("localStartingAmount")
-    setStartingAmount(Number(localStartingAmount))
+    // setStartingAmount(Number(localStartingAmount))
     setLocalStartingAmount(localStartingAmount)
     if (!entered) {
       setErrorMessage(true)
@@ -36,7 +36,7 @@ export default function Calculator() {
                 <label htmlFor="initial-investment" className="mr-4">
                   Starting Amount ($)
                 </label>
-                <input type="text" id="initial-investment" />
+                <input type="text" id="initial-investment" defaultValue={localStartingAmount ? localStartingAmount : ""} />
               </div>
 
               <div className="flex justify-between mb-2">
