@@ -46,7 +46,14 @@ export default function Calculator() {
                 <label htmlFor="initial-investment" className="mr-4">
                   Starting Amount ($)
                 </label>
-                <input type="text" id="initial-investment" defaultValue={localStartingAmount ? localStartingAmount : ""} aria-describedby="starting-amount-error" />
+                <input
+                  type="text"
+                  id="initial-investment"
+                  defaultValue={localStartingAmount ? localStartingAmount : ""}
+                  aria-describedby="starting-amount-error"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
