@@ -14,28 +14,28 @@ export default function Calculator() {
                 <label htmlFor="initial-investment" className="mr-4">
                   Starting Amount
                 </label>
-                <input type="number" id="initial-investment" />
+                <input type="text" id="initial-investment" />
               </div>
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="years" className="mr-4">
                   After (years)
                 </label>
-                <input type="number" id="years" />
+                <input type="text" id="years" />
               </div>
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="return-rate" className="mr-4">
                   Return Rate
                 </label>
-                <input type="number" id="return-rate" />
+                <input type="text" id="return-rate" />
               </div>
 
               <div className="flex justify-between mb-2">
-                <label htmlFor="compoud" className="mr-4">
-                  Compoud
+                <label htmlFor="compound" className="mr-4">
+                  Compound
                 </label>
-                <select id="compoud">
+                <select id="compound">
                   <option value="1">Annually</option>
                   <option value="2">Semi-Annually</option>
                   <option value="3">Quarterly</option>
@@ -52,12 +52,14 @@ export default function Calculator() {
                 <label htmlFor="additional-contribution" className="mr-4">
                   Additional Contribution
                 </label>
-                <input type="number" id="additional-contribution" />
+                <input type="text" id="additional-contribution" />
               </div>
+
+              <p className="mt-8 mb-4">Choose a time of contribution and a contribution interval.</p>
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="additional-contribution" className="mr-4">
-                  Contribute at the
+                  Time of Contribution
                 </label>
                 <fieldset className="flex gap-2">
                   <legend className="sr-only">Select a contribution interval</legend>
@@ -76,7 +78,7 @@ export default function Calculator() {
 
               <div className="flex justify-between mb-2">
                 <label htmlFor="additional-contribution" className="mr-4">
-                  Of each
+                  Contribution Interval
                 </label>
                 <fieldset className="flex gap-2">
                   <legend className="sr-only">Select a contribution interval</legend>
@@ -92,7 +94,14 @@ export default function Calculator() {
                 </fieldset>
               </div>
 
-              <button type="submit" className="bg-green-800 text-white mt-4 w-full hover:bg-green-900">
+              <button
+                type="submit"
+                className="bg-green-800 text-white mt-4 w-full hover:bg-green-900"
+                onClick={e => {
+                  e.preventDefault()
+                  console.log("clicked")
+                }}
+              >
                 Calculate
               </button>
             </fieldset>
