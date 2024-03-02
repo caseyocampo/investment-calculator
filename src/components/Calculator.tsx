@@ -138,7 +138,7 @@ export default function Calculator() {
           </form>
         </div>
 
-        <Results startingAmount={startingAmount} localStartingAmount={localStartingAmount ? Number(localStartingAmount) : 0} />
+        <Results localStartingAmount={localStartingAmount ? Number(localStartingAmount) : 0} />
       </div>
     </main>
   )
