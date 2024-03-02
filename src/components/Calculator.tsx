@@ -25,33 +25,33 @@ export default function Calculator() {
     <main className="max-w-4xl m-auto">
       <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
-      <div className="flex flex-col gap-4 sm:gap-16 sm:justify-between sm:flex-row">
+      <div className="flex flex-col gap-4 sm:gap-8 sm:justify-between sm:flex-row">
         <div id="form" className="bg-white p-4 sm:p-8 rounded-lg">
           <form className="max-w-lg">
             <fieldset>
               <legend className="text-2xl mb-4">Enter investment numbers</legend>
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="initial-investment" className="mr-4">
                   Starting Amount ($)
                 </label>
                 <input type="text" id="initial-investment" defaultValue={localStartingAmount ? localStartingAmount : ""} aria-describedby="starting-amount-error" />
               </div>
 
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="years" className="mr-4">
                   Projected Years
                 </label>
                 <input type="text" id="years" />
               </div>
 
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="return-rate" className="mr-4">
                   Return Rate (%)
                 </label>
                 <input type="text" id="return-rate" />
               </div>
 
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="compound" className="mr-4">
                   Compound
                 </label>
@@ -68,7 +68,7 @@ export default function Calculator() {
                 </select>
               </div>
 
-              <div className="flex justify-between mb-2">
+              <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="additional-contribution" className="mr-4">
                   Additional Contribution
                 </label>
@@ -77,10 +77,8 @@ export default function Calculator() {
 
               <p className="mt-8 mb-4">Choose a time of contribution and a contribution interval below.</p>
 
-              <div className="flex justify-between mb-2">
-                <label htmlFor="contribute-start" className="mr-4">
-                  Time of Contribution
-                </label>
+              <div className="flex flex-col justify-between mb-2 md:flex-row">
+                <p className="mr-4 mb-4 md:mb-0">Time of Contribution</p>
                 <fieldset className="flex gap-2 flex-col" id="time-of-contribution">
                   <legend className="sr-only">select a time of contribution</legend>
 

@@ -476,12 +476,10 @@ html,
   margin: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-p,
+h1,
+  h2,
+  h3,
+  p,
   legend,
   label,
   select {
@@ -631,11 +629,6 @@ input,
   margin: auto;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -672,6 +665,11 @@ input,
   display: flex;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .w-auto {
   width: auto;
 }
@@ -692,6 +690,10 @@ input,
   max-width: 32rem;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -706,10 +708,6 @@ input,
 
 .gap-4 {
   gap: 1rem;
-}
-
-.gap-8 {
-  gap: 2rem;
 }
 
 .rounded-lg {
@@ -742,6 +740,10 @@ input,
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .text-2xl {
@@ -786,25 +788,50 @@ input,
     flex-direction: row;
   }
 
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
+
   .sm\:justify-between {
     justify-content: space-between;
   }
 
-  .sm\:gap-16 {
-    gap: 4rem;
+  .sm\:gap-8 {
+    gap: 2rem;
   }
 
   .sm\:p-8 {
     padding: 2rem;
   }
 
-  .sm\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
-  .sm\:py-8 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
   }
 }
