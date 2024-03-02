@@ -20,7 +20,7 @@
   a {
     font-weight: 500;
     text-decoration: underline;
-    @apply text-blue-850;
+    @apply text-blue-800;
   }
   a:hover {
     @apply text-blue-950;
