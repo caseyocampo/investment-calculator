@@ -5,18 +5,16 @@ import Results from "./Results"
 export default function Calculator() {
   let getLocalStartingAmount = localStorage.getItem("localStartingAmount")
 
-  //   const [startingAmount, setStartingAmount] = useState(0)
   const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
   const [errorMessage, setErrorMessage] = useState(false)
 
   // @TODO: refactor naming of variables
   function calculate() {
-    const entered = (document.getElementById("initial-investment") as HTMLInputElement).value
-    localStorage.setItem("localStartingAmount", entered)
+    const startingAmountEntered = (document.getElementById("initial-investment") as HTMLInputElement).value
+    localStorage.setItem("localStartingAmount", startingAmountEntered)
     const localStartingAmount = localStorage.getItem("localStartingAmount")
-    // setStartingAmount(Number(localStartingAmount))
     setLocalStartingAmount(localStartingAmount)
-    if (!entered) {
+    if (!startingAmountEntered) {
       setErrorMessage(true)
     } else {
       setErrorMessage(false)
@@ -36,7 +34,7 @@ export default function Calculator() {
                 <label htmlFor="initial-investment" className="mr-4">
                   Starting Amount ($)
                 </label>
-                <input type="text" id="initial-investment" defaultValue={localStartingAmount ? localStartingAmount : ""} />
+                <input type="text" id="initial-investment" defaultValue={localStartingAmount ? localStartingAmount : ""} aria-describedby="starting-amount-error" />
               </div>
 
               <div className="flex justify-between mb-2">
@@ -83,35 +81,27 @@ export default function Calculator() {
                 <label htmlFor="contribute-start" className="mr-4">
                   Time of Contribution
                 </label>
-                <fieldset className="flex gap-2" id="time-of-contribution">
-                  <legend className="sr-only">Select a contribution interval</legend>
+                <fieldset className="flex gap-2 flex-col" id="time-of-contribution">
+                  <legend className="sr-only">select a time of contribution</legend>
 
                   <div>
-                    <input className="mr-1" type="radio" id="beginning" name="contribute-start" value="beginning" defaultChecked />
-                    <label htmlFor="beginning">Beginning</label>
+                    <input className="mr-1" type="radio" id="beginning-month" name="contribute-start" value="beginning-month" defaultChecked />
+                    <label htmlFor="beginning-month">Beginning of the month</label>
                   </div>
 
                   <div>
-                    <input className="mr-1" type="radio" id="end" name="contribute-start" value="end" />
-                    <label htmlFor="end">End</label>
-                  </div>
-                </fieldset>
-              </div>
-
-              <div className="flex justify-between mb-2">
-                <label htmlFor="contribution-interval" className="mr-4">
-                  Contribution Interval
-                </label>
-                <fieldset className="flex gap-2">
-                  <legend className="sr-only">Select a contribution interval</legend>
-                  <div>
-                    <input className="mr-1" type="radio" id="month" name="contribute-interval" value="month" defaultChecked />
-                    <label htmlFor="month">Month</label>
+                    <input className="mr-1" type="radio" id="beginning-year" name="contribute-start" value="beginning-year" defaultChecked />
+                    <label htmlFor="beginning-year">Beginning of the year</label>
                   </div>
 
                   <div>
-                    <input className="mr-1" type="radio" id="year" name="contribute-interval" value="year" />
-                    <label htmlFor="year">Year</label>
+                    <input className="mr-1" type="radio" id="end-month" name="contribute-start" value="end-month" />
+                    <label htmlFor="end-month">End of the month</label>
+                  </div>
+
+                  <div>
+                    <input className="mr-1" type="radio" id="end-year" name="contribute-start" value="end-year" />
+                    <label htmlFor="end-year">End of the year</label>
                   </div>
                 </fieldset>
               </div>
@@ -127,13 +117,16 @@ export default function Calculator() {
                 Calculate
               </button>
 
-              {errorMessage ? (
-                <section className="bg-red-100 rounded-lg p-4 mt-4 ">
-                  <p id="starting-amount-error" className="text-red-950">
-                    Please enter a starting amount.
-                  </p>
-                </section>
-              ) : null}
+              <section aria-live="polite">
+                {errorMessage ? (
+                  <div className="bg-red-100 rounded-lg p-4 mt-4 ">
+                    <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
+                    <p id="starting-amount-error" className="text-red-950">
+                      Please enter a starting amount
+                    </p>
+                  </div>
+                ) : null}
+              </section>
             </fieldset>
           </form>
         </div>
