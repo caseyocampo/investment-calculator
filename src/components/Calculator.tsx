@@ -1,7 +1,7 @@
 export default function Calculator() {
   return (
     <section className="max-w-3xl m-auto">
-      <p className="mb-8">An investment calculator used to calculate and view projected investments.</p>
+      <p className="mb-8">An investment calculator that helps calculate and view projected investments.</p>
 
       <div className="flex flex-col gap-8 sm:justify-between sm:flex-row">
         <div id="form">
