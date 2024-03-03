@@ -40,7 +40,7 @@
   label,
   select {
     font-size: 1rem;
-    @apply text-violet-950;
+    @apply text-amber-950;
   }
 
   ul {
@@ -69,6 +69,6 @@
     border: 1px solid transparent;
     border-radius: 4px;
     @apply p-1;
-    @apply bg-violet-100;
+    @apply border-gray-700;
   }
 }
