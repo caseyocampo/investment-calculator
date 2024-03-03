@@ -1,5 +1,4 @@
 export default function Results({ localStartingAmount, localYearsInvested, localReturnRate }: { localStartingAmount: number; localYearsInvested: number; localReturnRate: number }) {
-  // Compound interest: C.I.= P × (1 +R)powT - P
   const startingAmount = localStartingAmount
   const returnRate = localReturnRate / 100
   const compoundInterest = (localStartingAmount * Math.pow(1 + returnRate, localYearsInvested) - localStartingAmount).toFixed(2)
@@ -30,6 +29,7 @@ export default function Results({ localStartingAmount, localYearsInvested, local
         <p className="mr-4">Total Interest</p>
         <p>${interestFormatted}</p>
       </div>
+      <p className="mt-8 text-violet-950 opacity-75">These results are based on annual compount interest.</p>
     </div>
   )
 }

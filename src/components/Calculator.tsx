@@ -13,9 +13,6 @@ export default function Calculator() {
   const [errorStartingAmount, setErrorStartingAmount] = useState(false)
   const [errorNoLetters, setErrorNoLetters] = useState(false)
 
-  // @TODO: formula for calculating simple interest is:
-  // Interest = P(startingAmount)* T(yearsInvested) * R(returnRate)
-
   function calculate() {
     const startingAmount = (document.getElementById("starting-amount") as HTMLInputElement).value
     const yearsInvested = (document.getElementById("years") as HTMLInputElement).value
@@ -101,24 +98,6 @@ export default function Calculator() {
                 <input type="text" id="return-rate" inputMode="numeric" pattern="[0-9]*" defaultValue={localReturnRate ? localReturnRate : ""} />
               </div>
 
-              <div className="flex flex-col justify-between mb-2 md:flex-row">
-                <label htmlFor="compound" className="mr-4">
-                  Compound
-                </label>
-                {/* @TODO: add support for commented out options */}
-                <select id="compound">
-                  <option value="1">Annually</option>
-                  {/* <option value="2">Semi-Annually</option> */}
-                  {/* <option value="3">Quarterly</option> */}
-                  <option value="4">Monthly</option>
-                  {/* <option value="5">Semi-Monthly</option> */}
-                  <option value="6">Bi-Weekly</option>
-                  {/* <option value="7">Weekly</option> */}
-                  {/* <option value="8">Daily</option> */}
-                  {/* <option value="9">Continuously</option> */}
-                </select>
-              </div>
-
               <div className="flex flex-col justify-between mb-4 md:flex-row">
                 <label htmlFor="additional-contribution" className="mr-4">
                   Additional Contribution
@@ -137,7 +116,7 @@ export default function Calculator() {
                   </div>
 
                   <div>
-                    <input className="mr-1" type="radio" id="beginning-year" name="contribute-start" value="beginning-year" defaultChecked />
+                    <input className="mr-1" type="radio" id="beginning-year" name="contribute-start" value="beginning-year" />
                     <label htmlFor="beginning-year">Beginning of the year</label>
                   </div>
 
