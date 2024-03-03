@@ -4,21 +4,40 @@ import Results from "./Results"
 
 export default function Calculator() {
   let getLocalStartingAmount = localStorage.getItem("localStartingAmount")
+  let getLocalYearsInvested = localStorage.getItem("localYearsInvested")
+  let getLocalReturnRate = localStorage.getItem("localReturnRate")
 
   const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
+  const [localYearsInvested, setLocalYearsInvested] = useState(getLocalYearsInvested)
+  const [localReturnRate, setLocalReturnRate] = useState(getLocalReturnRate)
   const [errorStartingAmount, setErrorStartingAmount] = useState(false)
   const [errorNoLetters, setErrorNoLetters] = useState(false)
 
+  // @TODO: formula for calculating simple interest is:
+  // Interest = P(startingAmount)* T(yearsInvested) * R(returnRate)
+
   function calculate() {
     const startingAmount = (document.getElementById("starting-amount") as HTMLInputElement).value
+    const yearsInvested = (document.getElementById("years") as HTMLInputElement).value
+    const returnRate = (document.getElementById("return-rate") as HTMLInputElement).value
+
     const regex = ".*[a-zA-Z].*"
     const found = startingAmount.match(regex)
     if (found) {
       setErrorNoLetters(true)
     } else {
       localStorage.setItem("localStartingAmount", startingAmount)
+      localStorage.setItem("localYearsInvested", yearsInvested)
+      localStorage.setItem("localReturnRate", returnRate)
+
       const localStartingAmount = localStorage.getItem("localStartingAmount")
+      const localYearsInvested = localStorage.getItem("localYearsInvested")
+      const localReturnRate = localStorage.getItem("localReturnRate")
+
       setLocalStartingAmount(localStartingAmount)
+      setLocalYearsInvested(localYearsInvested)
+      setLocalReturnRate(localReturnRate)
+
       setErrorNoLetters(false)
     }
     if (!startingAmount) {
@@ -72,14 +91,14 @@ export default function Calculator() {
                 <label htmlFor="years" className="mr-4">
                   Projected Years
                 </label>
-                <input type="text" id="years" inputMode="numeric" pattern="[0-9]*" />
+                <input type="text" id="years" inputMode="numeric" pattern="[0-9]*" defaultValue={localYearsInvested ? localYearsInvested : ""} />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
                 <label htmlFor="return-rate" className="mr-4">
                   Return Rate (%)
                 </label>
-                <input type="text" id="return-rate" inputMode="numeric" pattern="[0-9]*" />
+                <input type="text" id="return-rate" inputMode="numeric" pattern="[0-9]*" defaultValue={localReturnRate ? localReturnRate : ""} />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
@@ -148,7 +167,11 @@ export default function Calculator() {
           </form>
         </div>
 
-        <Results localStartingAmount={localStartingAmount ? Number(localStartingAmount) : 0} />
+        <Results
+          localStartingAmount={Number(localStartingAmount) ? Number(localStartingAmount) : 0}
+          localYearsInvested={Number(localYearsInvested) ? Number(localYearsInvested) : 0}
+          localReturnRate={Number(localReturnRate) ? Number(localReturnRate) : 0}
+        />
       </div>
     </main>
   )
