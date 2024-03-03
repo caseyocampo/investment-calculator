@@ -7,7 +7,7 @@ export default function Results({ localStartingAmount }: { localStartingAmount: 
       <h2 className="text-2xl mb-4">Results</h2>
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
         <p className="mr-4 font-bold">End Balance</p>
-        <p className="font-bold">$198,290.40</p>
+        <p className="font-bold">${startingAmountFormatted ? startingAmountFormatted : 0}</p>
       </div>
 
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
@@ -17,12 +17,12 @@ export default function Results({ localStartingAmount }: { localStartingAmount: 
 
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
         <p className="mr-4">Total Contributions</p>
-        <p>$120,000.00</p>
+        <p>$0</p>
       </div>
 
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
         <p className="mr-4">Total Interest</p>
-        <p>$58,290.40</p>
+        <p>$0</p>
       </div>
     </div>
   )
