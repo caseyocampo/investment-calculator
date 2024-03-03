@@ -7,13 +7,21 @@ export default function Calculator() {
 
   const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
   const [errorMessage, setErrorMessage] = useState(false)
+  const [errorMessageNoLetters, setErrorMessageNoLetters] = useState(false)
 
   // @TODO: refactor naming of variables
   function calculate() {
     const startingAmountEntered = (document.getElementById("initial-investment") as HTMLInputElement).value
-    localStorage.setItem("localStartingAmount", startingAmountEntered)
-    const localStartingAmount = localStorage.getItem("localStartingAmount")
-    setLocalStartingAmount(localStartingAmount)
+    const regex = ".*[a-zA-Z].*"
+    const found = startingAmountEntered.match(regex)
+    if (found) {
+      setErrorMessageNoLetters(true)
+    } else {
+      localStorage.setItem("localStartingAmount", startingAmountEntered)
+      const localStartingAmount = localStorage.getItem("localStartingAmount")
+      setLocalStartingAmount(localStartingAmount)
+      setErrorMessageNoLetters(false)
+    }
     if (!startingAmountEntered) {
       setErrorMessage(true)
     } else {
@@ -34,6 +42,18 @@ export default function Calculator() {
                 <ul id="starting-amount-error" className="text-red-950">
                   <li>The Starting Amount field cannot be blank</li>
                   <li>Please enter a starting amount in US Dollars</li>
+                </ul>
+              </div>
+            ) : null}
+          </section>
+
+          <section aria-live="assertive" aria-label={errorMessageNoLetters ? "Error messages" : ""}>
+            {errorMessageNoLetters ? (
+              <div className="bg-red-100 rounded-lg p-4 mb-6">
+                <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
+                <ul id="starting-amount-error" className="text-red-950">
+                  <li>The Starting Amount cannot contain letters</li>
+                  <li>Please enter numeric characters only</li>
                 </ul>
               </div>
             ) : null}
