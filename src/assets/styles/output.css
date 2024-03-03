@@ -476,6 +476,10 @@ html,
   margin: 0;
 }
 
+h1 {
+  text-wrap: balance;
+}
+
 h1,
   h2,
   h3,
@@ -728,6 +732,10 @@ input,
   gap: 1rem;
 }
 
+.text-balance {
+  text-wrap: balance;
+}
+
 .rounded-md {
   border-radius: 0.375rem;
 }
@@ -773,10 +781,6 @@ input,
   padding: 1.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -819,6 +823,10 @@ input,
 }
 
 @media (min-width: 640px) {
+  .sm\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
   .sm\:w-96 {
     width: 24rem;
   }

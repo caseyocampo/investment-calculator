@@ -32,6 +32,10 @@
     margin: 0;
   }
 
+  h1 {
+    text-wrap: balance;
+  }
+
   h1,
   h2,
   h3,
