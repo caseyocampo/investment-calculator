@@ -3,7 +3,6 @@ export default function Results({ localStartingAmount, localYearsInvested, local
   const startingAmountFormatted = new Intl.NumberFormat().format(startingAmount)
 
   // Compound interest: C.I.= P × (1 +R)powT - P
-  // console.log(localStartingAmount * Math.pow(1 + returnRate, localYearsInvested) - localStartingAmount)
   const returnRate = localReturnRate / 100
   const interest = localStartingAmount * Math.pow(1 + returnRate, localYearsInvested) - localStartingAmount
   const interestFormatted = interest.toFixed(2)

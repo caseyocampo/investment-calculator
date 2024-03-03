@@ -1,0 +1,11 @@
+FORMULAS
+
+Compound interest: P × (1 +R)powT - P
+
+    P = localStartingAmount 
+    R = returnRate
+    powT = to the power of localYearsInvested
+
+localStartingAmount * Math.pow(1 + returnRate, localYearsInvested) - localStartingAmount
+
+https://www.cuemath.com/commercial-math/simple-interest/
