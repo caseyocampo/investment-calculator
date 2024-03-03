@@ -6,26 +6,25 @@ export default function Calculator() {
   let getLocalStartingAmount = localStorage.getItem("localStartingAmount")
 
   const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
-  const [errorMessage, setErrorMessage] = useState(false)
-  const [errorMessageNoLetters, setErrorMessageNoLetters] = useState(false)
+  const [errorStartingAmount, setErrorStartingAmount] = useState(false)
+  const [errorNoLetters, setErrorNoLetters] = useState(false)
 
-  // @TODO: refactor naming of variables
   function calculate() {
-    const startingAmountEntered = (document.getElementById("initial-investment") as HTMLInputElement).value
+    const startingAmount = (document.getElementById("starting-amount") as HTMLInputElement).value
     const regex = ".*[a-zA-Z].*"
-    const found = startingAmountEntered.match(regex)
+    const found = startingAmount.match(regex)
     if (found) {
-      setErrorMessageNoLetters(true)
+      setErrorNoLetters(true)
     } else {
-      localStorage.setItem("localStartingAmount", startingAmountEntered)
+      localStorage.setItem("localStartingAmount", startingAmount)
       const localStartingAmount = localStorage.getItem("localStartingAmount")
       setLocalStartingAmount(localStartingAmount)
-      setErrorMessageNoLetters(false)
+      setErrorNoLetters(false)
     }
-    if (!startingAmountEntered) {
-      setErrorMessage(true)
+    if (!startingAmount) {
+      setErrorStartingAmount(true)
     } else {
-      setErrorMessage(false)
+      setErrorStartingAmount(false)
     }
   }
 
@@ -35,8 +34,8 @@ export default function Calculator() {
 
       <div className="flex flex-col gap-4 sm:gap-8 sm:justify-between sm:flex-row">
         <div id="form" className="bg-white sm:w-[550px] p-6 sm:p-8 rounded-lg">
-          <section aria-live="assertive" aria-label={errorMessage ? "Error messages" : ""}>
-            {errorMessage ? (
+          <section aria-live="assertive" aria-label={errorStartingAmount ? "Error messages" : ""}>
+            {errorStartingAmount ? (
               <div className="bg-red-100 rounded-lg p-4 mb-6">
                 <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
                 <ul id="starting-amount-error" className="text-red-950">
@@ -47,8 +46,8 @@ export default function Calculator() {
             ) : null}
           </section>
 
-          <section aria-live="assertive" aria-label={errorMessageNoLetters ? "Error messages" : ""}>
-            {errorMessageNoLetters ? (
+          <section aria-live="assertive" aria-label={errorNoLetters ? "Error messages" : ""}>
+            {errorNoLetters ? (
               <div className="bg-red-100 rounded-lg p-4 mb-6">
                 <p className="text-red-950 font-bold mb-4">Could not process calculation</p>
                 <ul id="starting-amount-error" className="text-red-950">
@@ -63,17 +62,10 @@ export default function Calculator() {
               <legend className="text-2xl mb-2">Enter investment numbers</legend>
               <p className="mb-8 text-violet-950 opacity-75">*All fields below are required</p>
               <div className="flex flex-col justify-between mb-2 md:flex-row">
-                <label htmlFor="initial-investment" className="mr-4">
+                <label htmlFor="starting-amount" className="mr-4">
                   Starting Amount ($)
                 </label>
-                <input
-                  type="text"
-                  id="initial-investment"
-                  defaultValue={localStartingAmount ? localStartingAmount : ""}
-                  aria-describedby="starting-amount-error"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                />
+                <input type="text" id="starting-amount" defaultValue={localStartingAmount ? localStartingAmount : ""} aria-describedby="starting-amount-error" inputMode="numeric" pattern="[0-9]*" />
               </div>
 
               <div className="flex flex-col justify-between mb-2 md:flex-row">
