@@ -1,12 +1,11 @@
 export default function Results({ localStartingAmount, localYearsInvested, localReturnRate }: { localStartingAmount: number; localYearsInvested: number; localReturnRate: number }) {
-  const startingAmount = localStartingAmount
-  const startingAmountFormatted = new Intl.NumberFormat().format(startingAmount)
-
   // Compound interest: C.I.= P × (1 +R)powT - P
+  const startingAmount = localStartingAmount
   const returnRate = localReturnRate / 100
-  const interest = localStartingAmount * Math.pow(1 + returnRate, localYearsInvested) - localStartingAmount
-  const interestFormatted = interest.toFixed(2)
-  const endBalance = (localStartingAmount + Number(interestFormatted)).toFixed(2)
+  const compoundInterest = (localStartingAmount * Math.pow(1 + returnRate, localYearsInvested) - localStartingAmount).toFixed(2)
+  const endBalance = localStartingAmount + Number(compoundInterest)
+  const startingAmountFormatted = new Intl.NumberFormat().format(startingAmount)
+  const interestFormatted = new Intl.NumberFormat().format(Number(compoundInterest))
   const endBalanceFormatted = new Intl.NumberFormat().format(Number(endBalance))
 
   return (
