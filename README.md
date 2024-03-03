@@ -1,6 +1,6 @@
 # Investment Calculator
 
-An investment calculator used to calculate and view projected investments.
+An investment calculator that helps calculate and view projected investments.
 
 ## Technology
 
@@ -10,7 +10,9 @@ Uses React, TypeScript, Tailwind, Vite, and Vercel.
 
 To develop locally, run:
 
-`npm run dev`
+```
+npm run dev
+```
 
 ## Tailwind
 
@@ -18,7 +20,9 @@ Install Tailwind: [Tailwind Get Started guide](https://tailwindcss.com/docs/inst
 
 To watch for new Tailwind classes, run:
 
-`npx tailwindcss -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css --watch`
+```
+npx tailwindcss -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css --watch
+```
 
 Alternatively, add this command to your `package.json` file:
 
