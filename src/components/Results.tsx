@@ -16,7 +16,7 @@ export default function Results({ localStartingAmount, localYearsInvested, local
       </div>
 
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
-        <p className="mr-4">Starting bmount</p>
+        <p className="mr-4">Starting amount</p>
         <p>${startingAmountFormatted ? startingAmountFormatted : 0}</p>
       </div>
 
@@ -29,7 +29,7 @@ export default function Results({ localStartingAmount, localYearsInvested, local
         <p className="mr-4">Total interest</p>
         <p>${interestFormatted}</p>
       </div>
-      <p className="mt-8 text-orange-950 opacity-75">These results are based on annual compount interest.</p>
+      <p className="mt-8 text-orange-950 opacity-75">These results are based on annual compound interest.</p>
     </section>
   )
 }

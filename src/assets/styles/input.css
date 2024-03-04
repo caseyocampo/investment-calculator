@@ -11,10 +11,6 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    --link-color-primary: #646cff;
-    --link-color-primary-hover: #535bf2;
-    --button-bg-color-primary: #1a1a1a;
-    --button-bg-color-primary-hover: #646cff;
   }
 
   a {
@@ -76,3 +72,10 @@
     @apply border-gray-700;
   }
 }
+
+/* .dollar-sign-input {
+  background-image: url("../img/dollar-sign.svg");
+  background-position: 0.25rem center;
+  background-repeat: no-repeat no-repeat;
+  padding-left: 0.95rem;
+} */

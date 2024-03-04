@@ -93,14 +93,14 @@ export default function Calculator() {
 
                 <div className="flex flex-col justify-between mb-2 md:flex-row">
                   <label htmlFor="return-rate" className="mr-4">
-                    Estimated rate of return (%)
+                    Annual rate of return (%)
                   </label>
                   <input type="text" id="return-rate" inputMode="numeric" pattern="[0-9]*" defaultValue={localReturnRate ? localReturnRate : ""} />
                 </div>
 
                 <div className="flex flex-col justify-between mb-4 md:flex-row">
                   <label htmlFor="additional-contribution" className="mr-4">
-                    Additional contribution
+                    Additional contribution ($)
                   </label>
                   <input type="text" id="additional-contribution" inputMode="numeric" pattern="[0-9]*" />
                 </div>

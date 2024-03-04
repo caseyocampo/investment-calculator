@@ -452,10 +452,6 @@ video {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --link-color-primary: #646cff;
-  --link-color-primary-hover: #535bf2;
-  --button-bg-color-primary: #1a1a1a;
-  --button-bg-color-primary-hover: #646cff;
 }
 
 a {
@@ -643,10 +639,6 @@ input,
   margin-bottom: 0.5rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -736,10 +728,6 @@ input,
   text-wrap: balance;
 }
 
-.text-pretty {
-  text-wrap: pretty;
-}
-
 .rounded-md {
   border-radius: 0.375rem;
 }
@@ -821,6 +809,13 @@ input,
 .outline-offset-4 {
   outline-offset: 4px;
 }
+
+/* .dollar-sign-input {
+  background-image: url("../img/dollar-sign.svg");
+  background-position: 0.25rem center;
+  background-repeat: no-repeat no-repeat;
+  padding-left: 0.95rem;
+} */
 
 .hover\:bg-opacity-95:hover {
   --tw-bg-opacity: 0.95;
