@@ -11,6 +11,7 @@ export default function Results({ localStartingAmount, localYearsInvested, local
     <section aria-label="Results" id="results" className="h-fit p-6 w-auto bg-[#F4EEE6] rounded-md sm:w-96 sm:p-8">
       <h2 className="text-2xl mb-4">Results</h2>
       <div className="flex flex-row justify-between mb-2 sm:flex-col sm:justify-start md:gap-8 md:justify-between md:flex-row">
+        {/* @TODO - refactor two p tags into one p tag for a11y announcements */}
         <p className="mr-4 font-bold">End balance</p>
         <p className="font-bold">${endBalanceFormatted}</p>
       </div>
