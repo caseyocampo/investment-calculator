@@ -7,10 +7,12 @@ export default function Calculator() {
   let getLocalStartingAmount = localStorage.getItem("localStartingAmount")
   let getLocalYearsInvested = localStorage.getItem("localYearsInvested")
   let getLocalReturnRate = localStorage.getItem("localReturnRate")
+  let getLocalContribution = localStorage.getItem("localAdditionalContribution")
 
   const [localStartingAmount, setLocalStartingAmount] = useState(getLocalStartingAmount)
   const [localYearsInvested, setLocalYearsInvested] = useState(getLocalYearsInvested)
   const [localReturnRate, setLocalReturnRate] = useState(getLocalReturnRate)
+  const [localAdditionalContribution, setLocalAdditionalContribution] = useState(getLocalContribution)
   const [errorStartingAmount, setErrorStartingAmount] = useState(false)
   const [errorNoLetters, setErrorNoLetters] = useState(false)
 
@@ -18,6 +20,7 @@ export default function Calculator() {
     const startingAmount = (document.getElementById("starting-amount") as HTMLInputElement).value
     const yearsInvested = (document.getElementById("years") as HTMLInputElement).value
     const returnRate = (document.getElementById("return-rate") as HTMLInputElement).value
+    const additionalContribution = (document.getElementById("additional-contribution") as HTMLInputElement).value
 
     const regex = ".*[a-zA-Z].*"
     const found = startingAmount.match(regex)
@@ -27,15 +30,17 @@ export default function Calculator() {
       localStorage.setItem("localStartingAmount", startingAmount)
       localStorage.setItem("localYearsInvested", yearsInvested)
       localStorage.setItem("localReturnRate", returnRate)
+      localStorage.setItem("localAdditionalContribution", additionalContribution)
 
       const localStartingAmount = localStorage.getItem("localStartingAmount")
       const localYearsInvested = localStorage.getItem("localYearsInvested")
       const localReturnRate = localStorage.getItem("localReturnRate")
+      const localAdditionalContribution = localStorage.getItem("localAdditionalContribution")
 
       setLocalStartingAmount(localStartingAmount)
       setLocalYearsInvested(localYearsInvested)
       setLocalReturnRate(localReturnRate)
-
+      setLocalAdditionalContribution(localAdditionalContribution)
       setErrorNoLetters(false)
     }
     if (!startingAmount) {
@@ -80,7 +85,7 @@ export default function Calculator() {
                   <label htmlFor="additional-contribution" className="mr-4">
                     Additional contribution ($)
                   </label>
-                  <input type="text" id="additional-contribution" inputMode="numeric" pattern="[0-9]*" />
+                  <input type="text" id="additional-contribution" inputMode="numeric" pattern="[0-9]*" defaultValue={localAdditionalContribution ? localAdditionalContribution : ""} />
                 </div>
 
                 <div className="flex flex-col justify-between mb-2 md:flex-row">
@@ -89,23 +94,8 @@ export default function Calculator() {
                     <legend className="sr-only">select a time of contribution</legend>
 
                     <div>
-                      <input className="mr-1" type="radio" id="beginning-month" name="contribute-start" value="beginning-month" defaultChecked />
-                      <label htmlFor="beginning-month">Beginning of the month</label>
-                    </div>
-
-                    <div>
-                      <input className="mr-1" type="radio" id="beginning-year" name="contribute-start" value="beginning-year" />
-                      <label htmlFor="beginning-year">Beginning of the year</label>
-                    </div>
-
-                    <div>
-                      <input className="mr-1" type="radio" id="end-month" name="contribute-start" value="end-month" />
-                      <label htmlFor="end-month">End of the month</label>
-                    </div>
-
-                    <div>
-                      <input className="mr-1" type="radio" id="end-year" name="contribute-start" value="end-year" />
-                      <label htmlFor="end-year">End of the year</label>
+                      <input className="mr-1" type="radio" id="end-month" name="contribute-start" value="end-month" defaultChecked />
+                      <label htmlFor="end-month">End of each month</label>
                     </div>
                   </fieldset>
                 </div>
@@ -129,6 +119,7 @@ export default function Calculator() {
           localStartingAmount={Number(localStartingAmount) ? Number(localStartingAmount) : 0}
           localYearsInvested={Number(localYearsInvested) ? Number(localYearsInvested) : 0}
           localReturnRate={Number(localReturnRate) ? Number(localReturnRate) : 0}
+          localAdditionalContribution={Number(localAdditionalContribution) ? Number(localAdditionalContribution) : 0}
         />
       </div>
     </main>
