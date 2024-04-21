@@ -76,7 +76,11 @@ C = localAdditionalContribution = regular contribution made at the end of each t
         <p>${interestFormatted}</p>
       </div>
       <p className="mt-8 text-orange-950 opacity-75">
-        These results are based on annual compound interest.
+        Based on calculations from{" "}
+        <a href="https://www.calculator.net/investment-calculator.html">
+          calculator.net
+        </a>
+        .
       </p>
     </section>
   );
