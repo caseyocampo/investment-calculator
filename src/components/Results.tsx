@@ -66,10 +66,10 @@ C = localAdditionalContribution = regular contribution made at the end of each t
         <p>${startingAmountFormatted ? startingAmountFormatted : 0}</p>
       </div>
 
-      <div className="mb-2 flex flex-row justify-between sm:flex-col sm:justify-start md:flex-row md:justify-between md:gap-8">
+      {/* <div className="mb-2 flex flex-row justify-between sm:flex-col sm:justify-start md:flex-row md:justify-between md:gap-8">
         <p className="mr-4">Total contributions</p>
         <p>${localAdditionalContribution}</p>
-      </div>
+      </div> */}
 
       <div className="mb-2 flex flex-row justify-between sm:flex-col sm:justify-start md:flex-row md:justify-between md:gap-8">
         <p className="mr-4">Total interest</p>

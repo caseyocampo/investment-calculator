@@ -4,7 +4,7 @@ export default function Footer() {
   let currentYear = date.getFullYear();
 
   return (
-    <footer className="m-auto mt-48 max-w-3xl">
+    <footer className="m-auto mb-2 mt-8 max-w-4xl">
       <p>
         © {currentYear} Investment Calculator. View this project on{" "}
         <a href="https://github.com/caseyocampo/investment-calculator">

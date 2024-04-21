@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-white p-4 md:p-4">
+    <div className="h-screen bg-white p-4 md:p-4">
       <Header />
       <Calculator />
       <Footer />

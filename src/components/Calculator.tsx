@@ -32,9 +32,9 @@ export default function Calculator() {
     const returnRate = (
       document.getElementById("return-rate") as HTMLInputElement
     ).value;
-    const additionalContribution = (
-      document.getElementById("additional-contribution") as HTMLInputElement
-    ).value;
+    // const additionalContribution = (
+    //   document.getElementById("additional-contribution") as HTMLInputElement
+    // ).value;
 
     const regex = ".*[a-zA-Z].*";
     const found = startingAmount.match(regex);
@@ -44,22 +44,22 @@ export default function Calculator() {
       localStorage.setItem("localStartingAmount", startingAmount);
       localStorage.setItem("localYearsInvested", yearsInvested);
       localStorage.setItem("localReturnRate", returnRate);
-      localStorage.setItem(
-        "localAdditionalContribution",
-        additionalContribution,
-      );
+      //   localStorage.setItem(
+      //     "localAdditionalContribution",
+      //     additionalContribution,
+      //   );
 
       const localStartingAmount = localStorage.getItem("localStartingAmount");
       const localYearsInvested = localStorage.getItem("localYearsInvested");
       const localReturnRate = localStorage.getItem("localReturnRate");
-      const localAdditionalContribution = localStorage.getItem(
-        "localAdditionalContribution",
-      );
+      //   const localAdditionalContribution = localStorage.getItem(
+      //     "localAdditionalContribution",
+      //   );
 
       setLocalStartingAmount(localStartingAmount);
       setLocalYearsInvested(localYearsInvested);
       setLocalReturnRate(localReturnRate);
-      setLocalAdditionalContribution(localAdditionalContribution);
+      //   setLocalAdditionalContribution(localAdditionalContribution);
       setErrorNoLetters(false);
     }
     if (!startingAmount) {
@@ -129,7 +129,7 @@ export default function Calculator() {
                   />
                 </div>
 
-                <div className="mb-4 flex flex-col justify-between md:flex-row">
+                {/* <div className="mb-4 flex flex-col justify-between md:flex-row">
                   <label htmlFor="additional-contribution" className="mr-4">
                     Additional contribution ($)
                   </label>
@@ -144,9 +144,9 @@ export default function Calculator() {
                         : ""
                     }
                   />
-                </div>
+                </div> */}
 
-                <div className="mb-2 flex flex-col justify-between md:flex-row">
+                {/* <div className="mb-2 flex flex-col justify-between md:flex-row">
                   <p className="mb-4 mr-4 md:mb-0">Time of contribution</p>
                   <fieldset
                     className="flex flex-col gap-2"
@@ -168,7 +168,7 @@ export default function Calculator() {
                       <label htmlFor="end-month">End of each month</label>
                     </div>
                   </fieldset>
-                </div>
+                </div> */}
 
                 <button
                   type="submit"
