@@ -2,6 +2,10 @@
 
 An investment calculator that helps calculate and view projected investments.
 
+## Coming Soon ... Maybe
+
+An updated calculator that includes calculating compound interest with additional monthly contributions.
+
 ## Technology
 
 Uses React, TypeScript, Tailwind, Vite, and Vercel.
