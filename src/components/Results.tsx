@@ -2,12 +2,12 @@ export default function Results({
   localStartingAmount,
   localYearsInvested,
   localReturnRate,
-  localAdditionalContribution,
+  //   localAdditionalContribution,
 }: {
   localStartingAmount: number;
   localYearsInvested: number;
   localReturnRate: number;
-  localAdditionalContribution: number;
+  //   localAdditionalContribution: number;
 }) {
   const principalInvestment = localStartingAmount;
   const annualInterestRate = localReturnRate / 100;

@@ -7,9 +7,9 @@ export default function Calculator() {
   let getLocalStartingAmount = localStorage.getItem("localStartingAmount");
   let getLocalYearsInvested = localStorage.getItem("localYearsInvested");
   let getLocalReturnRate = localStorage.getItem("localReturnRate");
-  let getLocalContribution = localStorage.getItem(
-    "localAdditionalContribution",
-  );
+  //   let getLocalContribution = localStorage.getItem(
+  //     "localAdditionalContribution",
+  //   );
 
   const [localStartingAmount, setLocalStartingAmount] = useState(
     getLocalStartingAmount,
@@ -18,8 +18,8 @@ export default function Calculator() {
     getLocalYearsInvested,
   );
   const [localReturnRate, setLocalReturnRate] = useState(getLocalReturnRate);
-  const [localAdditionalContribution, setLocalAdditionalContribution] =
-    useState(getLocalContribution);
+  //   const [localAdditionalContribution, setLocalAdditionalContribution] =
+  // useState(getLocalContribution);
   const [errorStartingAmount, setErrorStartingAmount] = useState(false);
   const [errorNoLetters, setErrorNoLetters] = useState(false);
 
@@ -195,11 +195,11 @@ export default function Calculator() {
           localReturnRate={
             Number(localReturnRate) ? Number(localReturnRate) : 0
           }
-          localAdditionalContribution={
-            Number(localAdditionalContribution)
-              ? Number(localAdditionalContribution)
-              : 0
-          }
+          //   localAdditionalContribution={
+          //     Number(localAdditionalContribution)
+          //       ? Number(localAdditionalContribution)
+          //       : 0
+          //   }
         />
       </div>
     </main>
