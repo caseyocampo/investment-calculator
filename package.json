@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "tailwind": "npx tailwindcss -i ./src/assets/styles/input.css -o ./src/assets/styles/output.css --watch",
-    "test": "jest --env=jsdom --verbose"
+    "test": "jest --env=jsdom --verbose --watch"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.24.1",

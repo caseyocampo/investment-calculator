@@ -36,7 +36,7 @@ export default function Results({
       <h2 className="mb-4 text-2xl">Results</h2>
       <div
         className="mb-2 flex flex-row justify-between sm:flex-col sm:justify-start md:flex-row md:justify-between md:gap-8"
-        aria-live="polite"
+        aria-live="assertive"
         aria-atomic="true"
         data-testid="end-balance"
       >

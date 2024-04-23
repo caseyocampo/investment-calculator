@@ -6,7 +6,7 @@ test("on end balance amount update, announce the new end balance", async () => {
   render(<Results />);
 
   const element = screen.getByTestId("end-balance");
-  expect(element).toHaveAttribute("aria-live", "polite");
+  expect(element).toHaveAttribute("aria-live", "assertive");
 });
 
 test("on starting amount update, announce the new end balance", async () => {
