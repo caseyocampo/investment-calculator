@@ -12,6 +12,8 @@
     "test": "jest --env=jsdom --verbose"
   },
   "dependencies": {
+    "@babel/preset-typescript": "^7.24.1",
+    "eslint-plugin-jest-dom": "^5.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -26,15 +26,13 @@ export default function Calculator() {
   function calculate() {
     const startingAmount = (
       document.getElementById("starting-amount") as HTMLInputElement
-    ).value;
+    )?.value;
     const yearsInvested = (document.getElementById("years") as HTMLInputElement)
-      .value;
+      ?.value;
     const returnRate = (
       document.getElementById("return-rate") as HTMLInputElement
-    ).value;
-    // const additionalContribution = (
-    //   document.getElementById("additional-contribution") as HTMLInputElement
-    // ).value;
+    )?.value;
+    // const additionalContribution = (document.getElementById("additional-contribution") as HTMLInputElement)?.value;
 
     const regex = ".*[a-zA-Z].*";
     const found = startingAmount.match(regex);
