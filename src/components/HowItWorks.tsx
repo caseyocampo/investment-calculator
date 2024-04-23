@@ -9,7 +9,7 @@ export default function HowItWorks() {
         principal of an investment or a loan, but also to the accumulated
         interest from previous periods. In other words, compound interest
         involves earning, or owing, interest on your interest. –{" "}
-        <a href="https://www.investopedia.com/terms/c/compoundinterest.aspp">
+        <a href="https://www.investopedia.com/terms/c/compoundinterest.asp">
           Investopedia.com
         </a>
       </p>
