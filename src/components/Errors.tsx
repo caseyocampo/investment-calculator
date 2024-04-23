@@ -6,7 +6,8 @@ export default function Errors({
     <>
       <section
         aria-live="assertive"
-        aria-label={errorStartingAmount ? "Error messages" : ""}
+        // aria-label={errorStartingAmount ? "Error messages" : ""}
+        aria-label="Error messages"
       >
         {errorStartingAmount ? (
           <div className="mb-6 rounded-md border-2 border-solid border-gray-900 bg-orange-200 p-4">
