@@ -4,12 +4,8 @@ export default function Errors({
 }) {
   return (
     <>
-      <section
-        aria-live="assertive"
-        // aria-label={errorStartingAmount ? "Error messages" : ""}
-        aria-label="Error messages"
-      >
-        {errorStartingAmount ? (
+      {errorStartingAmount ? (
+        <section aria-live="assertive" aria-label="Error messages">
           <div
             className="mb-6 rounded-md border-2 border-solid border-gray-900 bg-orange-200 p-4"
             data-testid="error-messages"
@@ -22,14 +18,11 @@ export default function Errors({
               <li>Please enter a starting amount in US Dollars</li>
             </ul>
           </div>
-        ) : null}
-      </section>
+        </section>
+      ) : null}
 
-      <section
-        aria-live="assertive"
-        aria-label={errorNoLetters ? "Error messages" : ""}
-      >
-        {errorNoLetters ? (
+      {errorNoLetters ? (
+        <section aria-live="assertive" aria-label="Error messages">
           <div className="mb-6 rounded-md border-2 border-solid border-gray-900 bg-orange-200 p-4">
             <p className="mb-4 font-bold text-orange-950">
               Could not process calculation
@@ -39,8 +32,8 @@ export default function Errors({
               <li>Please enter numeric characters only</li>
             </ul>
           </div>
-        ) : null}
-      </section>
+        </section>
+      ) : null}
     </>
   );
 }
