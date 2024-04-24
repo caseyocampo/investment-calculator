@@ -95,7 +95,9 @@ export default function Calculator() {
                     defaultValue={
                       localStartingAmount ? localStartingAmount : ""
                     }
-                    aria-describedby="starting-amount-error"
+                    aria-describedby={
+                      errorStartingAmount ? "starting-amount-error" : undefined
+                    }
                     inputMode="numeric"
                     pattern="[0-9]*"
                     data-testid="starting-amount-input"

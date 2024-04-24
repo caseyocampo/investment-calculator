@@ -24,9 +24,9 @@ export default function Errors({
       {errorNoLetters ? (
         <section aria-live="assertive" aria-label="Error messages">
           <div className="mb-6 rounded-md border-2 border-solid border-gray-900 bg-orange-200 p-4">
-            <p className="mb-4 font-bold text-orange-950">
+            <h2 className="mb-4 font-bold text-orange-950">
               Could not process calculation
-            </p>
+            </h2>
             <ul id="starting-amount-error" className="text-orange-950">
               <li>The Starting Amount field cannot contain letters</li>
               <li>Please enter numeric characters only</li>
