@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Errors from "../components/Errors";
+import Errors from "./Errors";
 import "@testing-library/jest-dom";
 
 test("on empty starting amount submission, announce error message", async () => {
