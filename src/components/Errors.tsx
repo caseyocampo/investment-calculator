@@ -10,7 +10,10 @@ export default function Errors({
         aria-label="Error messages"
       >
         {errorStartingAmount ? (
-          <div className="mb-6 rounded-md border-2 border-solid border-gray-900 bg-orange-200 p-4">
+          <div
+            className="mb-6 rounded-md border-2 border-solid border-gray-900 bg-orange-200 p-4"
+            data-testid="error-messages"
+          >
             <h2 className="mb-4 font-bold text-orange-950">
               Could not process calculation
             </h2>
