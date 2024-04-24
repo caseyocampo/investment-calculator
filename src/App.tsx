@@ -1,7 +1,7 @@
-import Header from "./components/Header";
-import Calculator from "./components/Calculator";
-import Footer from "./components/Footer";
-import HowItWorks from "./components/HowItWorks";
+import Header from './components/Header'
+import Calculator from './components/Calculator'
+import Footer from './components/Footer'
+import HowItWorks from './components/HowItWorks'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <HowItWorks />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
