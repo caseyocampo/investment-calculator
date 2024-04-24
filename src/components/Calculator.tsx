@@ -98,6 +98,7 @@ export default function Calculator() {
                     aria-describedby="starting-amount-error"
                     inputMode="numeric"
                     pattern="[0-9]*"
+                    data-testid="starting-amount-input"
                   />
                 </div>
 
