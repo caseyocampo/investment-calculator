@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import Errors from './Errors'
 import Results from './Results'
 

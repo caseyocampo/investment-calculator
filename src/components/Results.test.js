@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import Results from './Results'
 import '@testing-library/jest-dom'
+import Results from './Results'
 
 test('on end balance amount update, announce the new end balance', async () => {
   render(<Results />)

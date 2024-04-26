@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import Errors from './Errors'
 import '@testing-library/jest-dom'
+import Errors from './Errors'
 
 test('on empty starting amount form submission, populate error message', async () => {
   render(<Errors errorStartingAmount="true" />)
