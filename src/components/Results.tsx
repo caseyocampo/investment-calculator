@@ -6,7 +6,7 @@ export default function Results({ localStartingAmount, localYearsInvested, local
   return (
     <section aria-label="Results" id="results" className="h-fit w-auto rounded-md bg-[#F4EEE6] p-6 sm:w-96 sm:p-8">
       <h2 className="mb-4 text-2xl">Results</h2>
-      <div className="mb-2 flex flex-row justify-between sm:flex-col sm:justify-start md:flex-row md:justify-between md:gap-8" aria-live="assertive" aria-atomic="true" data-testid="end-balance">
+      <div className="mb-2 flex flex-row justify-between sm:flex-col sm:justify-start md:flex-row md:justify-between md:gap-8" aria-live="polite" aria-atomic="true" data-testid="end-balance">
         <p className="mr-4 font-bold">End balance</p>
         <p className="font-bold">
           {Intl.NumberFormat('en-US', {

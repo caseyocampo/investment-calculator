@@ -20,8 +20,10 @@ export default function Calculator() {
     const returnRate = (document.getElementById('return-rate') as HTMLInputElement)?.value
 
     const regex = '.*[a-zA-Z].*'
-    const found = startingAmount.match(regex)
-    if (found) {
+    const foundInStartingAmount = startingAmount.match(regex)
+    const foundInYearsInvested = yearsInvested.match(regex)
+    const foundInReturnRate = returnRate.match(regex)
+    if (foundInStartingAmount || foundInYearsInvested || foundInReturnRate) {
       setErrorNoLetters(true)
     } else {
       localStorage.setItem('localStartingAmount', startingAmount)
@@ -73,14 +75,28 @@ export default function Calculator() {
                   <label htmlFor="years" className="mr-4">
                     Years of growth
                   </label>
-                  <input type="text" id="years" inputMode="numeric" pattern="[0-9]*" defaultValue={localYearsInvested ? localYearsInvested : ''} />
+                  <input
+                    type="text"
+                    id="years"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    defaultValue={localYearsInvested ? localYearsInvested : ''}
+                    aria-describedby={errorNoLetters ? 'letters-error' : undefined}
+                  />
                 </div>
 
                 <div className="mb-2 flex flex-col justify-between md:flex-row">
                   <label htmlFor="return-rate" className="mr-4">
                     Annual rate of return (%)
                   </label>
-                  <input type="text" id="return-rate" inputMode="numeric" pattern="[0-9]*" defaultValue={localReturnRate ? localReturnRate : ''} />
+                  <input
+                    type="text"
+                    id="return-rate"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    defaultValue={localReturnRate ? localReturnRate : ''}
+                    aria-describedby={errorNoLetters ? 'letters-error' : undefined}
+                  />
                 </div>
 
                 <button
